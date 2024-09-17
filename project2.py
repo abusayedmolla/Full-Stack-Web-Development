@@ -1,25 +1,32 @@
-from random import choice
 import random
 
-for num in range(1, 101):
-    def main():
-            print("Welcome to the Number Guessing Game!")
-            print("Try to guess the number between 1 and 100.")
-            new = random.randint(1, 100)
-            attempts = 0
-            while True:
-                choicee = int(input("\nEnter your guess:"))
-                attempts +=1
-
-                if choicee == new:
-                    print(f"Congratulations! You've guessed the number in {attempts} attempts.")
-                elif choicee > new:
-                    print('Too high!')
-                elif choicee < new:
-                    print('Too low!')
+def number_guessing_game():
 
 
+    target_number = random.randint(1, 100)
+    attempts = 0
+    print("Welcome to the Number Guessing Game!")
+    print("Try to guess the number between 1 and 100.\n")
+
+    while True:
+        try:
+
+            user_guess = int(input("Enter your guess: "))
+            attempts += 1
 
 
-if __name__ == "__main__":
-    main()
+            if user_guess < target_number:
+                print("Too low!\n")
+            elif user_guess > target_number:
+                print("Too high!\n")
+            else:
+
+                print(f"Congratulations! You've guessed the number in {attempts} attempts.")
+                break
+
+        except ValueError:
+
+            print("Invalid input! Please enter a valid integer.\n")
+
+
+number_guessing_game()
