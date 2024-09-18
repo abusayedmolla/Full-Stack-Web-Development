@@ -25,7 +25,6 @@ def main():
         print("5. Modulus")
         print("6. Exit")
 
-        # Get user input for operation selection
         choice = input("Enter choice (1/2/3/4/5/6): ")
 
         if choice == '6':
@@ -33,7 +32,6 @@ def main():
             break
 
         if choice in ['1', '2', '3', '4', '5']:
-            # Get user input for numbers
             try:
                 num1 = float(input("Enter first number: "))
                 num2 = float(input("Enter second number: "))
@@ -41,7 +39,6 @@ def main():
                 print("Invalid input. Please enter numeric values.")
                 continue
 
-            # Perform the chosen operation
             if choice == '1':
                 result = add(num1, num2)
                 operation = '+'
